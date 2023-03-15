@@ -18,26 +18,17 @@ function Filter() {
   }, []);
 
   const brStates = state.map((stateObj) => stateObj.nome);
+  const brStatesId = state.map((stateObj) => stateObj.id);
 
   return (
     <main className="card">
-      <ul>
-        {state &&
-          state.length > 0 &&
-          state.map(
-            (stateObj, index) => (
-              // <li key={stateObj.name}>{stateObj.nome}</li>
-              brStates.push(stateObj.nome), console.log(brStates)
-            )
-          )}
-      </ul>
       <div className="filter-container">
         <div className="filter-box">
           <Dropdown
             isSearchable={true}
             placeHolder="UF"
             options={brStates.map((label) => ({ value: label, label }))}
-            
+            brStatesId={brStatesId}
           />
           <Dropdown
             isSearchable={true}

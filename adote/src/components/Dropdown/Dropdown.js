@@ -9,7 +9,7 @@ const Icon = () => {
   );
 };
 
-function Dropdown({ placeHolder, options, isSearchable, uf }) {
+function Dropdown({ placeHolder, options, isSearchable, brStatesId }) {
   const [showMenu, setShowMenu] = useState(false);
   const [selectedValue, setSelectedValue] = useState(null);
 
@@ -70,6 +70,7 @@ function Dropdown({ placeHolder, options, isSearchable, uf }) {
     setSelectedValue(option);
     setSearchValue("");
     setShowMenu(false);
+    console.log(brStatesId)
   };
 
   const isSelected = (option) => {
